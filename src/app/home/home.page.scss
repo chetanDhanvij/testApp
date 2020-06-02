@@ -1,0 +1,19 @@
+
+.post-list{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  ion-card{
+    height: 400px;
+    width: 200px;
+  }
+
+}
+
+.centered-text{
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}

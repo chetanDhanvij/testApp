@@ -1,0 +1,22 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Posts
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <section class="post-list">
+    <ion-card *ngFor="let post of posts$ | async" routerLink="/post/{{post.id}}">
+      <ion-card-header  color="secondary">
+        <ion-item lines="none" color="secondary">
+          {{post.title}}
+        </ion-item>
+      </ion-card-header>
+      <ion-card-content>
+        {{post.body}}
+      </ion-card-content>
+    </ion-card>
+  </section>
+</ion-content>

@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Post {{post?.id}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card *ngIf="post$ | async as post">
+      <ion-card-header  color="secondary">
+        <h1>{{post.title}}</h1>
+      </ion-card-header>
+      <ion-card-content>
+        {{post.body}}
+      </ion-card-content>
+      <ion-list>
+        <ion-list-header>
+            <ion-label>Comments</ion-label>
+        </ion-list-header>
+        <ion-list-header>
+            <ion-searchbar [(ngModel)]="commentSearchText"></ion-searchbar>
+        </ion-list-header>
+        <ion-item *ngFor="let comment of filteredComments">
+          <ion-label class="ion-text-wrap">
+            <ion-text color="primary">
+              <h3>{{comment.name}}</h3>
+              <p>{{comment.email}}</p>
+            </ion-text>
+            <ion-text>
+              <p>{{comment.body}}</p>
+            </ion-text>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card>
+</ion-content>
